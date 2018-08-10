@@ -5,7 +5,6 @@ export class Doctor {
   }
 
   getDoctor(name) {
-
     return new Promise((resolve, reject) => {
 
       let request = new XMLHttpRequest();
@@ -17,7 +16,6 @@ export class Doctor {
           reject(request.statusText);
         }
       }
-
       request.open("GET", url);
       request.send();
 
