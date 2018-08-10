@@ -17,11 +17,28 @@ $(document).ready(function() {
     console.log(doc)
 
     doc.then( (result) => {
-      console.log(result)
-      console.log(result.data)
+      console.log(result);
+      let docs = JSON.parse(result);
+      console.log(docs.meta)
+      console.log(docs.data)
+      console.log(docs.data[0].profile)
+      console.log(docs.data[0].profile.first_name)
+      console.log(docs.data[0].profile.last_name)
+    })
+    doc.then((results) => {
+      let doctors = JSON.parse(results);
+      for (let x in doctors.data) {
+        console.log(x)
+        console.log(doctors.data[x].profile.first_name)
+        console.log(doctors.data[x].profile.last_name)
+        $("#doctorTable").append(`<tr>
+          <td>${doctors.data[x].profile.first_name}</td>
+          <td>${doctors.data[x].profile.last_name}</td>
+        </tr>`)
+      }
     })
     // let newDocs = JSON.parse(doc)
-    // 
+    //
     // console.log(newDocs)
   })
 
