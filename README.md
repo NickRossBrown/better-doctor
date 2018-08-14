@@ -28,20 +28,24 @@
 * Clone the repo
 *  Install dependencies
 ```
-`npm install`
+`$ npm install`
+`$ install dotenv-webpack --save-dev`
 ```
 * Explicitly run ESLint
 ```
-`npm run lint`
+`$ npm run lint`
 ```
 * Build and start the dev server
 ```
-`npm run start`
+`$ npm run start`
 ```
 * Run the unit tests with Karma and Jasmine. Visit localhost:<route> to view the tests.
 ```
-`npm run test`
+`$ npm run test`
 ```
+
+apiKey = 7b1eb41650cc525bf527cc4c59f3619d
+
 
 <hr />
 ## Contribution Requirements

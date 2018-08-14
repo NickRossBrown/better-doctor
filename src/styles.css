@@ -1,3 +1,24 @@
 body {
   background-color: lightblue;
 }
+
+#doctorTable td {
+  width: 100%;
+  border: 2px solid #002A5C;
+  text-align: center;
+  table-layout: fixed;
+
+}
+
+th {
+  width: 100%;
+  text-align: center;
+  font-size: 15pt;
+  border: 5px solid #002A5C;
+  border-style: double;
+
+}
+
+.clickable {
+  text-decoration: underline;
+}
