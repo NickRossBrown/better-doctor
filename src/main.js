@@ -10,6 +10,7 @@ $(document).ready(function() {
 
   $("#userInput").submit((event) => {
     event.preventDefault();
+    // clearTable();
     let doctor = $("#doctorName").val();
     console.log(doctor)
     let getDoc = new Doctor ();
@@ -28,11 +29,19 @@ $(document).ready(function() {
     doc.then((results) => {
       let doctors = JSON.parse(results);
       console.log(doctors)
+      $("#doctorTable").append(`<tr>
+        <th> Name </th>
+        <th> Title</th>
+        <th> Gender </th>
+        <th> Specialties </th>
+      </tr>`)
       for (let x in doctors.data) {
+
         $("#doctorTable").append(`<tr>
           <td class="clickable" id="${doctors.data[x].uid}">${doctors.data[x].profile.first_name} ${doctors.data[x].profile.last_name}</td>
-          <td>${doctors.data[x].profile.last_name}</td>
-          <td>${doctors.data[x].practices[0].phones[0].number}</td>
+          <td>${doctors.data[x].profile.title}</td>
+          <td>${doctors.data[x].profile.gender}</td>
+          <td>${doctors.data[x].specialties[0].name}</td>
         </tr>`)
       }
 
@@ -76,15 +85,13 @@ $(document).ready(function() {
       })
     }
 
-    // $(".clickable").each(function() {
-    //   $(this).click(function() {
-    //     console.log("clicked")
-    //     findDoctor(this.id)
-    //
-    //   });
-    // });
-
   })
+
+  function clearTable() {
+  $("#doctorTable").each(function() {
+    this.remove();
+  });
+}
 
 
 
